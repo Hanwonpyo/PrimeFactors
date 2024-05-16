@@ -2,17 +2,22 @@
 #include<vector>
 #include "../PrimeFactor/prime-factors.cpp"
 using namespace std;
-
-
-TEST(PrimeFactors, 0f1)
+class PrimeFixture : public testing::Test
 {
+public:
 	PrimeFactor prime_factor;
-	vector<int> expected = {};
+	vector<int> expected;
+
+};
+
+
+TEST_F(PrimeFixture, 0f1)
+{
+	expected = {};
 	EXPECT_EQ(expected, prime_factor.of(1));
 }
-TEST(PrimeFactors, 0f2)
+TEST_F(PrimeFixture, 0f2)
 {
-	PrimeFactor prime_factor;
-	vector<int> expected = {2};
+	expected = {2};
 	EXPECT_EQ(expected, prime_factor.of(2));
 }
