@@ -9,10 +9,13 @@ public:
 		vector<int> result = {};
 		if (number > 1)
 		{
-			if (number == 4)
+			if (number % 4 ==0)
 			{
-				result.push_back(2);
-				result.push_back(2);
+				while (number % 2 == 0)
+				{
+					result.push_back(2);
+					number /= 2;
+				}
 			}
 			else
 			{
